@@ -99,7 +99,7 @@ subsentence <- sentence / prenex subsentence
 # BETA: JACU
 bridi_tail <- bridi_tail_1 ((gihek / joik_jek) stag? KE_clause free* bridi_tail KEhE_elidible free* tail_terms)?
 
-bridi_tail_start <- ME_clause / NUhA_clause / NU_clause / NA_clause !KU_clause / NAhE_clause !BO_clause / selbri / tag bridi_tail_start / KE_clause bridi_tail_start / bridi_tail
+bridi_tail_start <- ME_clause / NU_clause / NA_clause !KU_clause / NAhE_clause !BO_clause / selbri / tag bridi_tail_start / KE_clause bridi_tail_start / bridi_tail
 
 # BETA: JACU
 bridi_tail_1 <- bridi_tail_2 ((gihek / joik_jek) !(stag? BO_clause) !(stag? KE_clause) free* bridi_tail_2 tail_terms)*  #: LR2
@@ -116,11 +116,11 @@ tail_terms <- terms? VAU_elidible free*
 
 terms <- terms_1+
 
-#; terms_1 = terms_2 (PEhE_clause free* joik_jek terms_2)*
+#; terms_1 = terms_2
 
 #; terms_2 = term (CEhE_clause free* term)*
 
-terms_1 <- terms_2 (PEhE_clause free* joik_jek terms_2)*
+terms_1 <- terms_2
 
 terms_2 <- term (CEhE_clause free* nonabs_term)*
 
@@ -156,14 +156,13 @@ nontag_adverbial <- NA_clause free* KU_clause free* / NOIhA_clause free* sumti_t
 term_start <- term_1 / LA_clause / LE_clause / LI_clause / LU_clause / LAhE_clause / quantifier term_start / gek sumti gik / FA_clause / tag term_start
 
 # BETA: KE-termset
-termset <- gek_termset / NUhI_clause free* gek terms NUhU_elidible free* gik terms NUhU_elidible free* / NUhI_clause free* terms NUhU_elidible free* / KE_clause terms KEhE_elidible
+termset <- gek_termset / KE_clause terms KEhE_elidible
 
 gek_termset <- gek terms_gik_terms
 
 terms_gik_terms <- nonabs_term (gik / terms_gik_terms) nonabs_term
 
-# BETA: Enhanced VUhO
-sumti <- sumti_1 (VUhO_clause free* (relative_clauses (joik_ek sumti)?)?)?
+sumti <- sumti_1
 
 sumti_1 <- sumti_2 (joik_ek stag? KE_clause free* sumti KEhE_elidible free*)?
 
@@ -185,7 +184,7 @@ sumti_tail <- (sumti_6 relative_clauses?)? sumti_tail_1 / relative_clauses sumti
 sumti_tail_1 <- selbri relative_clauses? / quantifier selbri relative_clauses? / quantifier sumti
 
 # BETA: JAPOI
-relative_clauses <- relative_clause ((ZIhE_clause / joik_jek) free* relative_clause)* / gek relative_clauses gik relative_clauses
+relative_clauses <- relative_clause (joik_jek free* relative_clause)* / gek relative_clauses gik relative_clauses
 
 #; relative_clause = GOI_clause free* term GEhU_clause? free* / NOI_clause free* subsentence KUhO_clause? free*
 
@@ -215,8 +214,8 @@ tanru_unit_1 <- tanru_unit_2 linkargs?
 
 # ** zei is part of BRIVLA_clause
 
-# BETA: Bare MEX, NUhA+opeator, GOhOI, MEhOI
-tanru_unit_2 <- BRIVLA_clause free* / GOhA_clause RAhO_clause? free* / KE_clause free* selbri_3 KEhE_elidible free* / ME_clause free* (sumti / lerfu_string) MEhU_elidible free* MOI_clause? free* / mex MOI_clause free* / NUhA_clause free* operator / SE_clause free* tanru_unit_2 / JAI_clause free* tag? tanru_unit_2 / NAhE_clause free* tanru_unit_2 / NU_clause NAI_clause? free* (joik_jek NU_clause NAI_clause? free*)* subsentence KEI_elidible free* / GOhOI_clause free* / MEhOI_clause free*
+# BETA: Bare MEX, GOhOI, MEhOI
+tanru_unit_2 <- BRIVLA_clause free* / GOhA_clause free* / KE_clause free* selbri_3 KEhE_elidible free* / ME_clause free* (sumti / lerfu_string) MEhU_elidible free* MOI_clause? free* / mex MOI_clause free* / SE_clause free* tanru_unit_2 / NAhE_clause free* tanru_unit_2 / NU_clause NAI_clause? free* (joik_jek NU_clause NAI_clause? free*)* subsentence KEI_elidible free* / GOhOI_clause free* / MEhOI_clause free*
 
 #; linkargs = BE_clause free* term links? BEhO_clause? free*
 
@@ -247,7 +246,7 @@ mex <- mex_1 (operator mex_1)*
 
 mex_1 <- mex_2 (operator stag? BO_clause free* mex_1)?
 
-mex_2 <- number BOI_elidible free* / lerfu_string BOI_elidible free* / VEI_clause free* mex VEhO_elidible free* / NIhE_clause free* selbri TEhU_elidible free* / MOhE_clause sumti TEhU_elidible free* / gek mex gik mex_2 / (LAhE_clause free* / NAhE_clause free* BO_clause? free*) mex LUhU_elidible free* / PEhO_clause free* operator mex+ KUhE_elidible free* / FUhA_clause rp_expression
+mex_2 <- number BOI_elidible free* / lerfu_string BOI_elidible free* / gek mex gik mex_2 / (LAhE_clause free* / NAhE_clause free* BO_clause? free*) mex LUhU_elidible free* / PEhO_clause free* operator mex+ KUhE_elidible free* / FUhA_clause rp_expression
 
 rp_expression <- mex_1 (rp_expression operator)*
 
@@ -279,18 +278,18 @@ operand_0 <- operand_1 (joik_ek stag? KE_clause free* operand KEhE_elidible free
 
 
 
-operand_start <- quantifier / lerfu_word / NIhE_clause / MOhE_clause / JOhI_clause / gek / LAhE_clause / NAhE_clause
+operand_start <- quantifier / lerfu_word / JOhI_clause / gek / LAhE_clause / NAhE_clause
 
 operand_1 <- operand_2 (joik_ek operand_2)*
 
 operand_2 <- operand_3 (joik_ek stag? BO_clause free* operand_2)?
 
 # BETA: NAhE+SUMTI
-operand_3 <- quantifier / lerfu_string !MOI_clause BOI_elidible free* / NIhE_clause free* selbri TEhU_elidible free* / MOhE_clause free* sumti TEhU_elidible free* / JOhI_clause free* mex_2+ TEhU_elidible free* / gek operand gik operand_3 / (LAhE_clause free* / NAhE_clause BO_clause? free*) operand LUhU_elidible free*
+operand_3 <- quantifier / lerfu_string !MOI_clause BOI_elidible free* / JOhI_clause free* mex_2+ TEhU_elidible free* / gek operand gik operand_3 / (LAhE_clause free* / NAhE_clause BO_clause? free*) operand LUhU_elidible free*
 
 # BETA: MEX simplification
 # FIXME: forethought mex not possible anymore without pe'o. BIhE_clause isn't referenced anymore.
-number <- (PA_clause / (NIhE_clause free* selbri TEhU_elidible free*) / (MOhE_clause free* sumti TEhU_elidible free*)) (PA_clause / (NIhE_clause free* selbri TEhU_elidible free*) / (MOhE_clause free* sumti TEhU_elidible free*))*
+number <- (PA_clause) (PA_clause)*
 
 lerfu_string <- lerfu_word (PA_clause / lerfu_word)*
 
@@ -416,7 +415,6 @@ LIhU_elidible <- LIhU_clause?
 LOhO_elidible <- LOhO_clause?
 LUhU_elidible <- LUhU_clause?
 MEhU_elidible <- MEhU_clause?
-NUhU_elidible <- NUhU_clause?
 SEhU_elidible <- SEhU_clause?
 TEhU_elidible <- TEhU_clause?
 TOI_elidible <- TOI_clause?
