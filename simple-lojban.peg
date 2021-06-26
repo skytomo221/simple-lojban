@@ -1651,7 +1651,7 @@ CAI <- &cmavo ( p e i / c a i / c u h i / s a i / r u h e ) &post_word
 CO <- &cmavo ( c o ) &post_word
 
 # BETA: di'ai, jo'au, co'oi, da'oi, ki'ai, sa'ei
-COI <- &cmavo ( d i h a i / j o h a u / c o h o i / d a h o i / k i h a i / s a h e i / j u h i / c o i / f i h i / t a h a / m u h o / f e h o / c o h o / p e h u / k e h o / n u h e / r e h i / b e h e / j e h e / m i h e / k i h e / v i h o ) &post_word
+COI <- &cmavo ( d o i / d i h a i / j o h a u / c o h o i / d a h o i / k i h a i / s a h e i / j u h i / c o i / f i h i / t a h a / m u h o / f e h o / c o h o / p e h u / k e h o / n u h e / r e h i / b e h e / j e h e / m i h e / k i h e / v i h o ) &post_word
 
 CU <- &cmavo ( c u ) &post_word
 
