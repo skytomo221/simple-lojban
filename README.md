@@ -11,7 +11,7 @@
 ## 主な特徴
 
 通常のロジバンから削除された品詞はこちらになります：
-CAhA, CEI, CHhE, CUhE, DAhO, DOI, FAhO, FEhE, FEhU, FIhO, FOI, FUhA, FUhE, FUhO, GAhO, GEhU, GUhA, JAI, JOhI, KI, KUhE, LAU, LUhU, MAhO, MEhU, MOhE, MOhI, NIhE, NIhO, NUhA, NUhI, NUhU, PEhE, PEhO, RAhO, SA, SEI, SEhU, SI, SU, TAhE, TEhU, TEI, TO, TOI, TUhE, TUhU, VA, VAU, VEI, VEhO, VUhU, VEhA, VIhA, VUhO, XI, Y, ZEhA, ZEI, ZIhE
+CAhA, CEI, CHhE, CUhE, DAhO, DOI, FAhO, FEhE, FEhU, FIhO, FOI, FUhA, FUhE, FUhO, GAhO, GEhU, GUhA, JAI, JOhI, KI, KUhE, LAU, LUhU, MAhO, MEhU, MOhE, MOhI, NIhE, NIhO, NUhA, NUhI, NUhU, PEhE, PEhO, RAhO, SA, SEI, SEhU, SI, SU, TAhE, TEhU, TEI, TO, TOI, TUhE, TUhU, VA, VAU, VEI, VEhO, VUhU, VEhA, VIhA, VUhO, XI, ZEhA, ZEI, ZIhE
 
 ## Contributing
 
@@ -26,3 +26,10 @@ CAhA, CEI, CHhE, CUhE, DAhO, DOI, FAhO, FEhE, FEhU, FIhO, FOI, FUhA, FUhE, FUhO,
 このページは
 [la ilmentufa](http://lojban.org/papri/la_ilmentufa)
 から分岐して作られました。
+
+やさしいロジバンのPEG文法ファイルは
+[simple-lojban.peg](https://github.com/skytomo221/simple-lojban/blob/master/simple-lojban.peg)
+です。
+その他の機能については
+[la ilmentufa](https://lojban.github.io/ilmentufa/)
+（英語）をご覧ください。
