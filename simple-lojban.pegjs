@@ -1229,7 +1229,7 @@ p = expr:(comma* [pP] !h !glide !p !voiced) {return _node("p", expr);}
 
 t = expr:(comma* [tT] !h !glide !t !voiced) {return _node("t", expr);}
 
-h = expr:(comma* ['h] &nucleus) {return _node("h", expr);}
+h = expr:(comma* ['h\u2019] &nucleus) {return _node("h", expr);}
 
 //___________________________________________________________________
 

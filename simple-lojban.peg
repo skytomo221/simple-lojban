@@ -1041,7 +1041,7 @@ p <- comma* [pP] !h !glide !p !voiced
 
 t <- comma* [tT] !h !glide !t !voiced
 
-h <- comma* ['h] &nucleus
+h <- comma* ['h\u2019] &nucleus
 
 #___________________________________________________________________
 
