@@ -50,7 +50,7 @@
 
 text <- intro_null NAI_clause* text_part_2 (!gek joik_jek)? text_1? EOF?
 
-intro_null <- initial_spaces?
+intro_null <- spaces?
 
 text_part_2 <- (CMEVLA_clause+ / indicators?) free*
 
@@ -1069,9 +1069,7 @@ space_char <- [.\t\n\r?!\u0020]  #: JOIN
 
 #___________________________________________________________________
 
-spaces <- initial_spaces
-
-initial_spaces <- (comma* space_char)+ EOF? / EOF  #: LEAF
+spaces <- (comma* space_char)+ EOF? / EOF  #: LEAF
 
 ybu <- Y space_char* BU
 

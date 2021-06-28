@@ -238,7 +238,7 @@
 
 text = expr:(intro_null NAI_clause* text_part_2 (!gek joik_jek)? text_1? EOF?) {return _node("text", expr);}
 
-intro_null = expr:(initial_spaces?) {return _node("intro_null", expr);}
+intro_null = expr:(spaces?) {return _node("intro_null", expr);}
 
 text_part_2 = expr:((CMEVLA_clause+ / indicators?) free*) {return _node("text_part_2", expr);}
 
@@ -1257,9 +1257,7 @@ space_char = expr:([.\t\n\r?!\u0020]) {return _join(expr);}
 
 //___________________________________________________________________
 
-spaces = expr:(initial_spaces) {return _node("spaces", expr);}
-
-initial_spaces = expr:((comma* space_char)+ EOF? / EOF) {return ["initial_spaces", _join(expr)];}
+spaces = expr:((comma* space_char)+ EOF? / EOF) {return ["spaces", _join(expr)];}
 
 ybu = expr:(Y space_char* BU) {return _node("ybu", expr);}
 
