@@ -1261,6 +1261,8 @@ spaces = expr:(initial_spaces) {return _node("spaces", expr);}
 
 initial_spaces = expr:((comma* space_char)+ EOF? / EOF) {return ["initial_spaces", _join(expr)];}
 
+ybu = expr:(Y space_char* BU) {return _node("ybu", expr);}
+
 lujvo = expr:(!gismu !fuhivla brivla) {return _node("lujvo", expr);}
 
 //___________________________________________________________________
@@ -1282,7 +1284,7 @@ BOI = expr:(&cmavo ( b o i ) &post_word) {return _node("BOI", expr);}
 BU = expr:(&cmavo ( b u ) &post_word) {return _node("BU", expr);}
 
 // BETA: a'y, e'y, i'y, o'y, u'y, iy, uy
-BY = expr:(&cmavo ( j o h o / r u h o / g e h o / j e h o / l o h a / n a h a / s e h e / t o h a / g a h e / y h y / a h y / e h y / i h y / o h y / u h y / i y / u y / b y / c y / d y / f y / g y / j y / k y / l y / m y / n y / p y / r y / s y / t y / v y / x y / z y ) &post_word) {return _node("BY", expr);}
+BY = expr:(&cmavo ( ybu / j o h o / r u h o / g e h o / j e h o / l o h a / n a h a / s e h e / t o h a / g a h e / y h y / a h y / e h y / i h y / o h y / u h y / i y / u y / b y / c y / d y / f y / g y / j y / k y / l y / m y / n y / p y / r y / s y / t y / v y / x y / z y ) &post_word) {return _node("BY", expr);}
 
 CAI = expr:(&cmavo ( p e i / c a i / c u h i / s a i / r u h e ) &post_word) {return _node("CAI", expr);}
 
@@ -1391,6 +1393,8 @@ VAU = expr:(&cmavo ( v a u ) &post_word) {return _node("VAU", expr);}
 
 // BETA: ko'oi, si'au, o'ai, xe'e, xo'o
 UI = expr:(&cmavo ( k o h o i / s i h a u / a h o i / o h a i / x e h e / x o h o / i h a / i e / a h e / u h i / i h o / i h e / a h a / i a / o h i / o h e / e h e / o i / u o / e h i / u h o / a u / u a / a h i / i h u / i i / u h a / u i / a h o / a i / a h u / i u / e i / o h o / e h a / u u / o h a / o h u / u h u / e h o / i o / e h u / u e / i h i / u h e / b a h a / j a h o / c a h e / s u h a / t i h e / k a h u / s e h o / z a h a / p e h i / r u h a / j u h a / t a h o / r a h u / l i h a / b a h u / m u h a / d o h a / t o h u / v a h i / p a h e / z u h u / s a h e / l a h a / k e h u / s a h u / d a h i / j e h u / s a h a / k a u / t a h u / n a h i / j o h a / b i h u / l i h o / p a u / m i h u / k u h i / j i h a / s i h a / p o h o / p e h a / r o h i / r o h e / r o h o / r o h u / r o h a / r e h e / l e h o / j u h o / f u h i / d a i / g a h i / z o h o / b e h u / r i h e / s e h i / s e h a / v u h e / k i h a / x u / g e h e / b u h o ) &post_word) {return _node("UI", expr);}
+
+Y = expr:(&cmavo ( y ) &post_word) {return _node("Y", expr);}
 
 // BETA: xa'o
 ZAhO = expr:(&cmavo ( c o h i / p u h o / c o h u / m o h u / c a h o / c o h a / d e h a / b a h o / d i h a / z a h o / x a h o ) &post_word) {return _node("ZAhO", expr);}
